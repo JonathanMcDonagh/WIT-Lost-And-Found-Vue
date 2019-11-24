@@ -36,6 +36,10 @@
     color: #2c3e50;
   }
 
+  .VueTables__sortable {
+    cursor: pointer;
+  }
+
   .bg-dark {
     background-color: grey !important;
   }
