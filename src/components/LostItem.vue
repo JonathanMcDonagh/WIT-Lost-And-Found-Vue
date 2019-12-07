@@ -24,6 +24,13 @@
               <select id="WITBuilding" name="WITBuilding" class="form-control" type="text" v-model="WITBuilding">
                 <option value="null" selected disabled hidden>Choose Payment Type</option>
                 <option value="Business">Business Building</option>
+                <option value="Business">Dome Building</option>
+                <option value="Business">FTG Building</option>
+                <option value="Business">IT Building</option>
+                <option value="Business">Luke Wadding Library</option>
+                <option value="Business">Main Building</option>
+                <option value="Business">Nursing Building</option>
+                <option value="Business">Other</option>
               </select>
             </div>
 
@@ -55,92 +62,92 @@
 </template>
 
 <script>
-    import Vue from 'vue'
-    import VueForm from 'vueform'
-    import { required, minLength } from 'vuelidate/lib/validators'
-    import ItemService from '../services/ItemService'
-    import {Vuelidate} from 'vuelidate'
-    import VueSweetalert from 'vue-sweetalert'
-    Vue.use(VueForm, {
-        inputClasses: {
-            valid: 'form-control-success',
-            invalid: 'form-control-danger'
-        }
-    })
-    Vue.use(Vuelidate)
-    Vue.use(VueSweetalert)
-    export default {
-        name: 'Item',
-        data () {
-            return {
-                messagetitle: ' Item ',
-                studentid: 0,
-                name: '',
-                WITBuilding: 'Business',
-                WITRoom: '',
-                lostitem: '',
-                likes: 0,
-                item: {},
-                submitStatus: null
-            }
-        },
-        validations: {
-            studentid: {
-                required
-            },
-            name: {
-                required,
-                minLength: minLength(2)
-            },
-            WITRoom: {
-                required,
-                minLength: minLength(2)
-            },
-            lostitem: {
-                required,
-                minLength: minLength(4)
-            }
-        },
-        methods: {
-            submit () {
-                console.log('submit!')
-                this.$v.$touch()
-                if (this.$v.$invalid) {
-                    this.submitStatus = 'ERROR'
-                } else {
-                    // do your submit logic here
-                    this.submitStatus = 'PENDING'
-                    setTimeout(() => {
-                        this.submitStatus = 'OK'
-                        var item = {
-                            studentid: this.studentid,
-                            name: this.name,
-                            WITBuilding: this.WITBuilding,
-                            WITRoom: this.WITRoom,
-                            lostitem: this.lostitem,
-                            likes: this.likes
-                        }
-                        this.item = item
-                        console.log('Submitting in ItemForm : ' + JSON.stringify(this.item, null, 5))
-                        this.submitItem(this.item)
-                    }, 500)
-                }
-            },
-            submitItem: function (item) {
-                console.log('submitItem!')
-                console.log('Submitting in submitItem : ' + item)
-                ItemService.postItem(item)
-                    .then(response => {
-                        // JSON responses are automatically parsed.
-                        console.log(response)
-                    })
-                    .catch(error => {
-                        this.errors.push(error)
-                        console.log(error)
-                    })
-            }
-        }
+import Vue from 'vue'
+import VueForm from 'vueform'
+import { required, minLength } from 'vuelidate/lib/validators'
+import ItemService from '../services/ItemService'
+import {Vuelidate} from 'vuelidate'
+import VueSweetalert from 'vue-sweetalert'
+Vue.use(VueForm, {
+  inputClasses: {
+    valid: 'form-control-success',
+    invalid: 'form-control-danger'
+  }
+})
+Vue.use(Vuelidate)
+Vue.use(VueSweetalert)
+export default {
+  name: 'Item',
+  data () {
+    return {
+      messagetitle: ' Item ',
+      studentid: 0,
+      name: '',
+      WITBuilding: 'Business',
+      WITRoom: '',
+      lostitem: '',
+      likes: 0,
+      item: {},
+      submitStatus: null
     }
+  },
+  validations: {
+    studentid: {
+      required
+    },
+    name: {
+      required,
+      minLength: minLength(2)
+    },
+    WITRoom: {
+      required,
+      minLength: minLength(2)
+    },
+    lostitem: {
+      required,
+      minLength: minLength(4)
+    }
+  },
+  methods: {
+    submit () {
+      console.log('submit!')
+      this.$v.$touch()
+      if (this.$v.$invalid) {
+        this.submitStatus = 'ERROR'
+      } else {
+        // do your submit logic here
+        this.submitStatus = 'PENDING'
+        setTimeout(() => {
+          this.submitStatus = 'OK'
+          var item = {
+            studentid: this.studentid,
+            name: this.name,
+            WITBuilding: this.WITBuilding,
+            WITRoom: this.WITRoom,
+            lostitem: this.lostitem,
+            likes: this.likes
+          }
+          this.item = item
+          console.log('Submitting in ItemForm : ' + JSON.stringify(this.item, null, 5))
+          this.submitItem(this.item)
+        }, 500)
+      }
+    },
+    submitItem: function (item) {
+      console.log('submitItem!')
+      console.log('Submitting in submitItem : ' + item)
+      ItemService.postItem(item)
+        .then(response => {
+          // JSON responses are automatically parsed.
+          console.log(response)
+        })
+        .catch(error => {
+          this.errors.push(error)
+          console.log(error)
+        })
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -195,8 +202,17 @@
   }
   .error {
     border-color: red;
-    background: #157ffb;
+    background: red;
     color: whitesmoke;
+  }
+  .btn-primary {
+    background-color: red;
+    border-color: red;
+  }
+  .btn-primary:hover {
+    color: red;
+    border: 2px solid red;
+    background-color: white;
   }
   .error:focus {
     outline-color: #ffa519;

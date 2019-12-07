@@ -14,9 +14,7 @@
 import ItemService from '@/services/ItemService'
 import Vue from 'vue'
 import VueTables from 'vue-tables-2'
-
 Vue.use(VueTables.ClientTable, {compileTemplates: true, filterByColumn: true})
-
 export default {
   name: 'Items',
   data () {

@@ -4,7 +4,6 @@ import Home from '@/components/Home'
 import Items from '@/components/Items'
 import LostItem from '@/components/LostItem'
 import About from '@/components/About'
-import Contact from '@/components/Contact'
 import Map from '../components/Map'
 
 Vue.use(Router)
@@ -35,11 +34,6 @@ export default new Router({
       path: '/about',
       name: 'About',
       component: About
-    },
-    {
-      path: '/contact',
-      name: 'Contact',
-      component: Contact
     }
   ]
 })
