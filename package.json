@@ -14,13 +14,22 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "auth0-js": "^9.11.3",
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "bootstrap-vue": "^2.0.0-rc.11",
+    "firebase": "^7.5.2",
+    "firebaseui": "^4.3.0",
     "vue": "^2.5.2",
+    "vue-firebase": "^1.0.8",
+    "vue-google-login": "^2.0.3",
+    "vue-google-signin-button": "^1.0.4",
+    "vue-google-signin-button-directive": "^1.0.3",
     "vue-router": "^3.0.1",
     "vue-sweetalert": "^0.1.18",
+    "vue-sweetalert2": "^2.1.5",
     "vue-tables-2": "^1.4.62",
+    "vue2-google-maps": "^0.10.7",
     "vueform": "^2.0.0",
     "vuelidate": "^0.7.4"
   },

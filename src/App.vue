@@ -13,7 +13,10 @@
           <b-nav-item to="/about"><i class="fa fa-user-secret" style="padding: 5px"> About Us</i></b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
-          <b-nav-item to="/signin"><i class="fa fa-user-plus" style="padding: 5px"> Sign In </i></b-nav-item>
+          <b-nav-item-dropdown text="Account" right>
+            <b-nav-item to="/Login"><i class="fa fa-user-plus" style="padding: 5px"> Sign In </i></b-nav-item>
+            <b-nav-item @click="logout"><i class="fa fa-user-plus" style="padding: 5px"> Logout </i></b-nav-item>
+          </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -21,7 +24,30 @@
   </div>
 </template>
 
-<script>export default {name: 'App'}
+<script>
+import firebase from 'firebase'
+
+export default {
+
+  name: 'App',
+  data () {
+    return {
+      user: null
+    }
+  },
+  methods: {
+    logout: function () {
+      firebase.auth().signOut().then(
+        (user) => {
+          this.$router.replace('/#/')
+        },
+        (err) => {
+          alert('Oops. ' + err.message)
+        }
+      )
+    }
+  }
+}
 </script>
 
 <style>
@@ -65,4 +91,12 @@
     width: 50px;
   }
 
+  #__BVID__47__BV_button_ > span {
+    font-weight: bold;
+    color: white;
+  }
+
+  ul.dropdown-menu.dropdown-menu-right.show {
+    background-color: grey;
+  }
 </style>

@@ -2,6 +2,7 @@
   <div class="hero">
     <h1 class="vue-title">WIT Lost And Found</h1>
 
+    <h3>Welcome</h3>
     <table align="center">
       <tr>
         <td><img src="../assets/witcrest.png" alt="WIT Logo" /></td>

@@ -5,6 +5,9 @@ import Items from '@/components/Items'
 import LostItem from '@/components/LostItem'
 import About from '@/components/About'
 import Map from '../components/Map'
+import Edit from '../components/Edit'
+import SignUp from '../components/SignUp'
+import Login from '../components/Login'
 
 Vue.use(Router)
 
@@ -34,6 +37,22 @@ export default new Router({
       path: '/about',
       name: 'About',
       component: About
+    },
+    {
+      path: '/edit',
+      name: 'Edit',
+      component: Edit,
+      props: true
+    },
+    {
+      path: '/signup',
+      name: 'SignUp',
+      component: SignUp
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
     }
   ]
 })
