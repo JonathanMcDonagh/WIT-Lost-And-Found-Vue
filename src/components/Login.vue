@@ -10,13 +10,23 @@
 
 <script>
 import firebase from 'firebase'
+import Toasted from 'vue-toasted'
+import Vue from 'vue'
+import GSignInButton from 'vue-google-signin-button'
+
+// eslint-disable-next-line no-undef
+Vue.use(Toasted)
+Vue.use(GSignInButton)
 
 export default {
   name: 'login',
   data () {
     return {
       email: '',
-      password: ''
+      password: '',
+      googleSignInParams: {
+        client_id: '602788018948-40dkunjbj85pokq6rjaeiirk9uhmg7tb.apps.googleusercontent.com'
+      }
     }
   },
   methods: {
@@ -24,6 +34,8 @@ export default {
       firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
         (user) => {
           this.$router.replace('/#/')
+          // eslint-disable-next-line no-undef
+          Vue.toasted.show('You have successfully logged in using the email: ' + this.email).goAway(5000)
         },
         (err) => {
           alert('Oops. ' + err.message)
@@ -32,6 +44,7 @@ export default {
     }
   }
 }
+
 </script>
 
 <style scoped>  /* "scoped" attribute limit the CSS to this component only */

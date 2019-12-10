@@ -13,9 +13,10 @@
           <b-nav-item to="/about"><i class="fa fa-user-secret" style="padding: 5px"> About Us</i></b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
+          <b-nav-item @click="userToast" class="userName"> {{email}}</b-nav-item>
           <b-nav-item-dropdown text="Account" right>
             <b-nav-item to="/Login"><i class="fa fa-user-plus" style="padding: 5px"> Sign In </i></b-nav-item>
-            <b-nav-item @click="logout"><i class="fa fa-user-plus" style="padding: 5px"> Logout </i></b-nav-item>
+            <b-nav-item @click="logout"><i class="fa fa-sign-out" style="padding: 5px"> Logout </i></b-nav-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
@@ -26,25 +27,41 @@
 
 <script>
 import firebase from 'firebase'
+import Toasted from 'vue-toasted'
+import Vue from 'vue'
+
+// eslint-disable-next-line no-undef
+Vue.use(Toasted)
 
 export default {
-
   name: 'App',
   data () {
     return {
-      user: null
-    }
+      email: '',
+      password: '' }
+  },
+  created () {
+    var firebaseUser = this
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        firebaseUser.user = user
+        firebaseUser.email = firebaseUser.user.email
+      }
+    })
   },
   methods: {
-    logout: function () {
-      firebase.auth().signOut().then(
-        (user) => {
-          this.$router.replace('/#/')
-        },
-        (err) => {
-          alert('Oops. ' + err.message)
-        }
-      )
+    logout () {
+      var firebaseUser = this
+      firebase.auth().signOut()
+        .then(
+          window.location.href = '/#/#',
+          firebaseUser.email = null,
+          Vue.toasted.show('You are logged out').goAway(5000)
+        )
+    },
+    userToast () {
+      var firebaseUser = this
+      Vue.toasted.show('You are logged in with the following email: ' + firebaseUser.user.email).goAway(3000)
     }
   }
 }
@@ -78,6 +95,10 @@ export default {
   }
 
   a.navbar-brand.router-link-exact-active.router-link-active {
+    color: #E82025;
+  }
+
+  .userName {
     color: #E82025;
   }
 

@@ -10,11 +10,17 @@
 
 <script>
 import firebase from 'firebase'
+import Toasted from 'vue-toasted'
+import Vue from 'vue'
+
+// eslint-disable-next-line no-undef
+Vue.use(Toasted)
+
 export default {
   name: 'signUp',
   data () {
     return {
-      email: '',
+      email: null,
       password: ''
     }
   },
@@ -23,6 +29,7 @@ export default {
       firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
         (user) => {
           this.$router.replace('/#/')
+          Vue.toasted.show('You have successfully signed up using the email: ' + this.email).goAway(5000)
         },
         (err) => {
           alert('Oops. ' + err.message)
