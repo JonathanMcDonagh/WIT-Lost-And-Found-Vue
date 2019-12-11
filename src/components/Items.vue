@@ -87,8 +87,8 @@ export default {
         showCloseButton: true
         // showLoaderOnConfirm: true
       }).then((result) => {
-        console.log('SWAL Result : ' + result.value)
-        if (result.value === true) {
+        console.log('SWAL Result : ' + result)
+        if (result === true) {
           ItemService.deleteItem(id)
             .then(response => {
               // JSON responses are automatically parsed.
@@ -104,7 +104,7 @@ export default {
               console.log(error)
             })
         } else {
-          console.log('SWAL Else Result : ' + result.value)
+          console.log('SWAL Else Result : ' + result)
           this.$swal('Cancelled', 'Item is still there!', 'info')
         }
       })
