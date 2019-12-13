@@ -2,7 +2,7 @@
   <form @submit.prevent="submit">
     <div class="form-group" :class="{ 'form-group--error': $v.studentid.$error }">
       <label class="form-control-label" name="studentid">Student Number</label>
-      <input class="form__input" type="number" v-model.trim="studentid"/>
+      <input data-test="studentid" class="form__input" type="number" v-model.trim="studentid"/>
     </div>
     <div class="error" v-if="!$v.name.required">Student Number is Required</div>
 
@@ -46,7 +46,7 @@
       <button class="btn btn-primary btn1" type="submit" :disabled="submitStatus === 'PENDING'">Submit Item</button>
     </p>
     <p>
-      <a href="#/items" class="btn btn-primary btn1" role="button">Manage Items</a>
+      <a href="#/items" data-test=manageitemsbtn class="btn btn-primary btn1" role="button">Manage Items</a>
     </p>
     <p class="typo__p" v-if="submitStatus === 'OK'">Thanks for your help!</p>
     <p class="typo__p" v-if="submitStatus === 'ERROR'">Please Fill in the Form Correctly.</p>
