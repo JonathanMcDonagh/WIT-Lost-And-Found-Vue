@@ -8,7 +8,7 @@
         <b-navbar-nav>
           <b-nav-item to="/"><i class="fa fa-graduation-cap" style="padding: 5px"> Home</i></b-nav-item>
           <b-nav-item to="/items"><i class="fa fa-list-ul" style="padding: 5px"> Manage Lost Items</i></b-nav-item>
-          <b-nav-item to="/lostitem"><i class="fa fa-plus-square-o" style="padding: 5px"> Report Lost Item</i></b-nav-item>
+          <b-nav-item data-test="lostitembtn" to="/lostitem"><i class="fa fa-plus-square-o" style="padding: 5px"> Report Lost Item</i></b-nav-item>
           <b-nav-item to="/map"><i class="fa fa-map-marker" style="padding: 5px"> Map</i></b-nav-item>
           <b-nav-item to="/about"><i class="fa fa-user-secret" style="padding: 5px"> About Us</i></b-nav-item>
         </b-navbar-nav>
@@ -29,8 +29,10 @@
 import firebase from 'firebase'
 import Toasted from 'vue-toasted'
 import Vue from 'vue'
+
 // eslint-disable-next-line no-undef
 Vue.use(Toasted)
+
 export default {
   name: 'App',
   data () {
@@ -66,6 +68,15 @@ export default {
 </script>
 
 <style>
+  body {
+    background-image: url("assets/startwitimage.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    bottom: 0;
+    right: 0;
+    margin:0;
+    padding:0;
+  }
   #app {
     font-family:helvetica neue,Helvetica,Roboto,Arial,sans-serif;
     font-size:1rem;
@@ -74,38 +85,90 @@ export default {
     text-align: center;
     color: #2c3e50;
   }
+
   .VueTables__sortable {
     cursor: pointer;
   }
-  .bg-dark {
-    background-color: grey !important;
+
+  .row.justify-content-center {
+    background-repeat: no-repeat;
+    color: black;
+    padding: 20px;
+    margin-bottom: 60px;
   }
+
+  a.fa.fa-thumbs-o-up.fa-2x {
+    color: blue;
+  }
+
+  a.fa.fa-pencil.fa-2x {
+    color: #DC8C24;
+  }
+
+  a.fa.fa-eraser.fa-2x {
+    color: red;
+  }
+
+  .bg-dark {
+    background-color: #0288BD !important;
+    border-bottom: 1px solid white;
+  }
+
   i.fa.fa {
     color: white;
   }
+
   li.nav-item:hover {
-    background-color: #0D3C51;
-    color: #ffffff;
+    color: #2D4FA1;
+    border: 1px solid white;
   }
-  a.navbar-brand.router-link-exact-active.router-link-active {
-    color: #E82025;
-  }
-  .userName {
-    color: #E82025;
-  }
-  .nav-link.router-link-exact-active.router-link-active {
-    text-decoration: underline;
-  }
+
   .navlogo {
     padding: 5px;
     height: 50px;
     width: 50px;
   }
+
+  .form-control-label, .form__label, .form-label {
+    background-color: #0288bdb0;
+    color: white;
+    margin-top: 20px;
+  }
+
   #__BVID__47__BV_button_ > span {
     font-weight: bold;
     color: white;
   }
+
   ul.dropdown-menu.dropdown-menu-right.show {
-    background-color: grey;
+    background-color: #0288BD;
   }
+
+  #homePageBG {
+    background-color: white;
+    padding: 20px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30%;
+  }
+
+  #aboutPageBG {
+    background-color: white ;
+    width: 50%;
+    padding: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 30%;
+  }
+
+  .VueTables.VueTables--client {
+    background-color: #f5f5f5;
+  }
+
+  .backText {
+    color: white;
+    font-weight: bold;
+  }
+
 </style>
