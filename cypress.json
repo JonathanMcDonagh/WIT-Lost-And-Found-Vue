@@ -1,0 +1,4 @@
+{
+    "baseUrl": "https://wit-lost-and-found.firebaseapp.com/",
+    "requestTimeout": 8999
+}
