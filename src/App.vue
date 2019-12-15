@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <b-navbar toggleable="md" variant="dark" type="dark">
+    <b-navbar toggleable="md" id="navbg" variant="dark" type="dark">
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
       <img src="./assets/witnavlogo.png" class="navlogo" style="padding: 5px">
       <b-navbar-brand to="/" class="heading">WIT Lost And Found</b-navbar-brand>

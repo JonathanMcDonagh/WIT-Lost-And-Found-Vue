@@ -4,6 +4,16 @@ Name: Jonathan McDonagh
 
 Student Number: 20074520
 
+## App Description
+WIT Lost and Found is built using the MVEN Stack.
+
+WIT Lost and Found main objective is to allow 
+students to post items they find so other students 
+can find the item for example by searching WIT Room,
+WIT Building and Lost Item Description.
+
+I also included Google Maps API and Firebase Login.
+
 ## Client UI.
 WIT Lost And Found
 
@@ -177,3 +187,13 @@ Client Github repo: https://github.com/JonathanMcDonagh/WIT-Lost-And-Found-Vue
 Web App Hosting: https://wit-lost-and-found.firebaseapp.com/
 
 Web App Server: https://wit-lost-and-found.herokuapp.com/
+
+## References.
+Medium. (2019). Vue 2 + Firebase: How to build a Vue app with 
+Firebase authentication system in 15 minutes. [online] Available 
+at: https://medium.com/@anas.mammeri/vue-2-firebase-how-to-build-a-vue-app-with-firebase-authentication-system-in-15-minutes-fdce6f289c3c 
+[Accessed 9 Dec. 2019].
+
+Alligator.io. (2019). Using Google Maps in Vue with vue-google-maps. [online] Available at: https://alligator.io/vuejs/vue-google-maps/ [Accessed 10 Dec. 2019].
+
+Firebase. (2019). Authenticate with Firebase in JavaScript Using a Custom Authentication System. [online] Available at: https://firebase.google.com/docs/auth/web/custom-auth [Accessed 10 Dec. 2019].

@@ -12,7 +12,6 @@
         <td>
           <p class="lead">
           <p>Found a lost item on the WIT Property?</p>
-          <p>Just click <a href ="/lostitem">here</a> to go to</p>
         </td>
       </tr>
     </table>
