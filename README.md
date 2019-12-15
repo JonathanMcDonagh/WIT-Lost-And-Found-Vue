@@ -187,6 +187,8 @@ Web App Hosting: https://wit-lost-and-found.firebaseapp.com/
 
 Web App Server: https://wit-lost-and-found.herokuapp.com/
 
+YouTube Video: https://www.youtube.com/watch?v=RlMObaE8zsg&feature=youtu.be
+
 ## References.
 Medium. (2019). Vue 2 + Firebase: How to build a Vue app with 
 Firebase authentication system in 15 minutes. [online] Available 
