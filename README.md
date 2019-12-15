@@ -180,7 +180,6 @@ WIT Lost And Found
       √  All specs passed!                        00:25       10       10        -        -        -  
 
 ## Links.
-Client GitLab repo: https://gitlab.com/jonathanmcdonagh/wit-lost-and-found-cypress
 
 Client Github repo: https://github.com/JonathanMcDonagh/WIT-Lost-And-Found-Vue
 
