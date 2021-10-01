@@ -1,16 +1,18 @@
-# Web App Assignment 2 - WIT Lost and Found.
+# WIT Lost and Found - Assignment
 
 Name: Jonathan McDonagh
 
-Student Number: 20074520
+## Web App Development 2 Module
 
-## App Description
-WIT Lost and Found is built using the MVEN Stack.
+BSc (Hons) in Software Systems Development - Year 4 Semester 1
 
-WIT Lost and Found main objective is to allow 
-students to post items they find so other students 
-can find the item for example by searching WIT Room,
-WIT Building and Lost Item Description.
+**Grade:** 81%  
+
+## Overview
+
+**WIT Lost And Found is a Web App made using the MEVN stack**
+
+The main objective of this web application is to allow users to post items they find so other students can find the item. This is achieved by by allowing the user to post the lost item through a form using their Student ID, Name, WIT Building, WIT Room Number, and the Lost Item Description.
 
 I also included Google Maps API and Firebase Login.
 
@@ -181,13 +183,19 @@ WIT Lost And Found
 
 ## Links.
 
-Client Github repo: https://github.com/JonathanMcDonagh/WIT-Lost-And-Found-Vue
-
-Web App Hosting: https://wit-lost-and-found.firebaseapp.com/
-
-Web App Server: https://wit-lost-and-found.herokuapp.com/
-
 YouTube Video: https://www.youtube.com/watch?v=RlMObaE8zsg&feature=youtu.be
+
+Github (Frontend): https://github.com/JonathanMcDonagh/WIT-Lost-And-Found-Vue
+
+Github (Frontend-Testing): https://github.com/JonathanMcDonagh/WIT-Lost-And-Found-Cypress-Testing
+
+Github (Backend): https://github.com/JonathanMcDonagh/WIT-Lost-And-Found-Backend
+
+Github (Backend-Testing): https://github.com/JonathanMcDonagh/WIT-Lost-And-Found-Backend-Testing
+
+Heroku Hosting (Backend): https://wit-lost-and-found.herokuapp.com/
+
+Firebase Hosting (Frontend): https://wit-lost-and-found.firebaseapp.com/
 
 ## References.
 Medium. (2019). Vue 2 + Firebase: How to build a Vue app with 
@@ -198,3 +206,5 @@ at: https://medium.com/@anas.mammeri/vue-2-firebase-how-to-build-a-vue-app-with-
 Alligator.io. (2019). Using Google Maps in Vue with vue-google-maps. [online] Available at: https://alligator.io/vuejs/vue-google-maps/ [Accessed 10 Dec. 2019].
 
 Firebase. (2019). Authenticate with Firebase in JavaScript Using a Custom Authentication System. [online] Available at: https://firebase.google.com/docs/auth/web/custom-auth [Accessed 10 Dec. 2019].
+
+## Completed December 2019
